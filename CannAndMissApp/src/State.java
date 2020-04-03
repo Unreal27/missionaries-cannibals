@@ -7,6 +7,15 @@ public class State {
     private State prev;
     private int stateLevel=0;
 
+    public State(String name,int numberOfMissionaries, int numberOfCannibals, boolean side, int stateLevel)
+    {
+        this.name = name;
+        this.numberOfMissionaries = numberOfMissionaries;
+        this.numberOfCannibals = numberOfCannibals;
+        this.side = side;
+        this.stateLevel = stateLevel;
+    }
+
 
     public State(String name, int numberOfMissionaries, int numberOfCannibals, boolean side,
                  State prev, int stateLevel)
@@ -83,7 +92,7 @@ public class State {
             return true;
 
         //For the other side
-        if((3 - numberOfCannibals > 3 - numberOfMissionaries))
+        if((3 - numberOfCannibals > 3 - numberOfMissionaries) )
             return true;
 
         //If nothing of the above is true, then the state is valid.
@@ -106,8 +115,6 @@ public class State {
         }
 
         System.out.print(numberOfMissionaries + "M" + " " + numberOfCannibals + "C" + " " + temp + (3 - numberOfMissionaries)+ "M" + " " +(3- numberOfCannibals) + "C");
-
-
 
     }
 
